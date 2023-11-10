@@ -1,23 +1,28 @@
-let nomeDoHeroi = "Bodoman";
-let xpDoHeroi = 7500;
-let nivelDoHeroi;
+function calcularNivel(vitorias, derrotas) {
+    
+    let saldoVitorias = vitorias - derrotas;
 
-if (xpDoHeroi < 1000) {
-    nivelDoHeroi = "Ferro";
-} else if (xpDoHeroi >= 1001 && xpDoHeroi <= 2000) {
-    nivelDoHeroi = "Bronze";
-} else if (xpDoHeroi >= 2001 && xpDoHeroi <= 5000) {
-    nivelDoHeroi = "Prata";
-} else if (xpDoHeroi >= 6001 && xpDoHeroi <= 7000) {
-    nivelDoHeroi = "Ouro";
-} else if (xpDoHeroi >= 7001 && xpDoHeroi <= 8000) {
-    nivelDoHeroi = "Platina";
-} else if (xpDoHeroi >= 8001 && xpDoHeroi <= 9000) {
-    nivelDoHeroi = "Ascendente";
-} else if (xpDoHeroi >= 9001 && xpDoHeroi <= 10000) {
-    nivelDoHeroi = "Imortal";
-} else {
-    nivelDoHeroi = "Radiante";
+    let nivel;
+
+    if (vitorias < 10) {
+        nivel = "Ferro";
+    } else if (vitorias >= 11 && vitorias <= 20) {
+        nivel = "Bronze";
+    } else if (vitorias >= 21 && vitorias <= 50) {
+        nivel = "Prata";
+    } else if (vitorias >= 51 && vitorias <= 80) {
+        nivel = "Ouro";
+    } else if (vitorias >= 81 && vitorias <= 90) {
+        nivel = "Diamante";
+    } else if (vitorias >= 91 && vitorias <= 100) {
+        nivel = "Lendário";
+    } else {
+        nivel = "Imortal";
+    }
+
+    return "O Herói tem um saldo de " + saldoVitorias + " e está no nível de " + nivel;
 }
 
-console.log("O Herói de nome " + nomeDoHeroi + " está no nível de " + nivelDoHeroi);
+
+let resultado = calcularNivel(60, 20);
+console.log(resultado);
